@@ -218,7 +218,15 @@ func (board *Board) FindBest(best *[]Position, message IncomingMessage) {
     bestFitness := 0
     fitnessRepeat := 0
     lastFitness := 0
-    for i:=0; i < 1000; i++ {
+    max := 1000
+
+    if board.Rows * board.Columns > 2000 {
+        max = 100
+    } else {
+        max = 1000
+    }
+
+    for i:=0; i < max; i++ {
         if len(board.CandidatePositions) > 0 {
             board.AddQueen(board.GetCandidatePosition())
             if board.Fitness > bestFitness {
