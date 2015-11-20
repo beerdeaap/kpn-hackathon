@@ -229,10 +229,8 @@ func (board *Board) FindBest(best *[]Position, message IncomingMessage) {
                 bestFitness = board.Fitness
             }
         } else if fitnessRepeat > 10 {
-            fmt.Println("reset")
             board.Initalize(message)
         } else {
-            fmt.Println("reset")
             board.Initalize(message)
         }
 
