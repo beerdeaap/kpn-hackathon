@@ -29,7 +29,7 @@ type IncomingMessage struct {
 }
 
 type OutgoingMessage struct {
-    Added_queens []Position
+    Added_queens []Position `json:"added_queens"`
 }
 
 func (board *Board) InitializeGrid() {
